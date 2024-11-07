@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "ro.pub.cs.systems.eim.practicaltest01"
+    namespace = "ro.pub.cs.systems.eim.Colocviu1_2"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ro.pub.cs.systems.eim.practicaltest01"
+        applicationId = "ro.pub.cs.systems.eim.Colocviu1_2"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

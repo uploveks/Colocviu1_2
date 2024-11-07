@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PracticalTest01"
+rootProject.name = "Colocviu1_2"
 include(":app")
  
