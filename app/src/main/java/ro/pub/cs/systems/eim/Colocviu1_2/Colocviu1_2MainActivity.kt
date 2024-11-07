@@ -1,5 +1,6 @@
 package ro.pub.cs.systems.eim.Colocviu1_2
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -18,6 +19,7 @@ class Colocviu1_2MainActivity : AppCompatActivity() {
 
     private var numbers = ArrayList<Int>()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_practical_test01_2_main)
@@ -52,5 +54,26 @@ class Colocviu1_2MainActivity : AppCompatActivity() {
             activityResult.launch(intent)
         }
 
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey("sum")) {
+                val sum = savedInstanceState.getInt("sum")
+                allTerms.setText(sum.toString())
+            }
+        }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("allTerms", allTerms.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState.containsKey("allTerms")) {
+            allTerms.setText(savedInstanceState.getString("allTerms"))
+        } else {
+            allTerms.setText("")
+        }
+    }
+
 }
